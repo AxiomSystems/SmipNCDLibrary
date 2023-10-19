@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UANodeSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" LastModified="2023-10-19T12:31:11.9560248Z" xmlns="http://opcfoundation.org/UA/2011/03/UANodeSet.xsd">
+  <NamespaceUris>
+    <Uri>https://www.axiomsystems.io/profiles/ncdwireless</Uri>
+  </NamespaceUris>
+  <Models>
+    <Model ModelUri="https://www.axiomsystems.io/profiles/ncdwireless" Version="1.0.0" PublicationDate="2023-10-19T00:00:00Z">
+      <RequiredModel ModelUri="http://opcfoundation.org/UA/" Version="1.05.02" PublicationDate="2022-11-01T00:00:00Z" />
+    </Model>
+  </Models>
+  <Aliases>
+    <Alias Alias="Float">i=10</Alias>
+    <Alias Alias="String">i=12</Alias>
+    <Alias Alias="AnalogItemType">i=2368</Alias>
+    <Alias Alias="HasModellingRule">i=37</Alias>
+    <Alias Alias="Int16">i=4</Alias>
+    <Alias Alias="HasTypeDefinition">i=40</Alias>
+    <Alias Alias="HasSubtype">i=45</Alias>
+    <Alias Alias="HasProperty">i=46</Alias>
+    <Alias Alias="HasComponent">i=47</Alias>
+    <Alias Alias="BaseObjectType">i=58</Alias>
+    <Alias Alias="PropertyType">i=68</Alias>
+    <Alias Alias="Optional">i=80</Alias>
+  </Aliases>
+  <UAObjectType NodeId="ns=1;g=1163e206-6a39-4a86-aa0f-562980cd97be" BrowseName="1:NCDWirelessSensorGateway">
+    <DisplayName>NCDWirelessSensorGateway</DisplayName>
+    <Description>Base Type for the NCD Wireless Sensor Gateway</Description>
+    <Category>Base Info Base Types</Category>
+    <References>
+      <Reference ReferenceType="HasSubtype" IsForward="false">ns=1;g=7dafc449-8d55-4eb3-a113-dc579ae9a50c</Reference>
+    </References>
+  </UAObjectType>
+  <UAObjectType NodeId="ns=1;g=4b71311a-b760-4d6f-8095-a1e6d867f432" BrowseName="1:NCDWirelessSensorBaseType">
+    <DisplayName>NCDWirelessSensorBaseType</DisplayName>
+    <Description>Type definitions common to all NCD Wireless Sensors</Description>
+    <Category>Base Info Base Types</Category>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;g=580de80b-dee9-4fde-83e5-732d8d105dc7</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;g=adee60f8-a522-45c9-bed7-079e89ef67a7</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;g=be078173-5ec8-4264-98c5-cc81044fa06a</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;g=6bdae648-70f4-4308-a71d-c6c081365c6d</Reference>
+      <Reference ReferenceType="HasSubtype" IsForward="false">ns=1;g=7dafc449-8d55-4eb3-a113-dc579ae9a50c</Reference>
+    </References>
+  </UAObjectType>
+  <UAVariable NodeId="ns=1;g=580de80b-dee9-4fde-83e5-732d8d105dc7" BrowseName="1:FirmwareVersion" ParentNodeId="ns=1;g=4b71311a-b760-4d6f-8095-a1e6d867f432" DataType="String">
+    <DisplayName>FirmwareVersion</DisplayName>
+    <Description>Current Firmware version</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">PropertyType</Reference>
+      <Reference ReferenceType="HasModellingRule">Optional</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;g=4b71311a-b760-4d6f-8095-a1e6d867f432</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;g=6247cfb2-4861-4768-95a8-046819ee9007" BrowseName="1:Humidity" ParentNodeId="ns=1;g=b9c58300-5799-48a5-b29b-564fce80d94a" DataType="Float">
+    <DisplayName>Humidity</DisplayName>
+    <Description>Current detected Humidity measured in percent</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">AnalogItemType</Reference>
+      <Reference ReferenceType="HasModellingRule">Optional</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;g=b9c58300-5799-48a5-b29b-564fce80d94a</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;g=6bdae648-70f4-4308-a71d-c6c081365c6d" BrowseName="1:RSSI" ParentNodeId="ns=1;g=4b71311a-b760-4d6f-8095-a1e6d867f432" DataType="Float">
+    <DisplayName>RSSI</DisplayName>
+    <Description>Wireless Signal Strength</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">AnalogItemType</Reference>
+      <Reference ReferenceType="HasModellingRule">Optional</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;g=4b71311a-b760-4d6f-8095-a1e6d867f432</Reference>
+    </References>
+  </UAVariable>
+  <UAObjectType NodeId="ns=1;g=7dafc449-8d55-4eb3-a113-dc579ae9a50c" BrowseName="1:NCDWirelessBaseType">
+    <DisplayName>NCDWirelessBaseType</DisplayName>
+    <Description>NCD Wireless Sensor Base Definition</Description>
+    <Category>Base Info Base Types</Category>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;g=a5f47446-748b-4290-ae63-dfd2b043403f</Reference>
+      <Reference ReferenceType="HasSubtype" IsForward="false">BaseObjectType</Reference>
+    </References>
+  </UAObjectType>
+  <UAVariable NodeId="ns=1;g=a5f47446-748b-4290-ae63-dfd2b043403f" BrowseName="1:MACAddress" ParentNodeId="ns=1;g=7dafc449-8d55-4eb3-a113-dc579ae9a50c" DataType="String">
+    <DisplayName>MACAddress</DisplayName>
+    <Description>The Unique Identifier for the hardware</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">PropertyType</Reference>
+      <Reference ReferenceType="HasModellingRule">Optional</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;g=7dafc449-8d55-4eb3-a113-dc579ae9a50c</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;g=adee60f8-a522-45c9-bed7-079e89ef67a7" BrowseName="1:Type" ParentNodeId="ns=1;g=4b71311a-b760-4d6f-8095-a1e6d867f432" DataType="Int16">
+    <DisplayName>Type</DisplayName>
+    <Description>Sensor type indicator</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">PropertyType</Reference>
+      <Reference ReferenceType="HasModellingRule">Optional</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;g=4b71311a-b760-4d6f-8095-a1e6d867f432</Reference>
+    </References>
+  </UAVariable>
+  <UAObjectType NodeId="ns=1;g=b9c58300-5799-48a5-b29b-564fce80d94a" BrowseName="1:NCDWirelessEnvironmentSensorType">
+    <DisplayName>NCDWirelessEnvironmentSensorType</DisplayName>
+    <Description>NCD Wireless Temperature and Humidity Sensor Type Definitions</Description>
+    <Category>Base Info Base Types</Category>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;g=6247cfb2-4861-4768-95a8-046819ee9007</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;g=d991fc98-3bdc-4cac-b243-7d2e9020ebbd</Reference>
+      <Reference ReferenceType="HasSubtype" IsForward="false">ns=1;g=4b71311a-b760-4d6f-8095-a1e6d867f432</Reference>
+    </References>
+  </UAObjectType>
+  <UAVariable NodeId="ns=1;g=be078173-5ec8-4264-98c5-cc81044fa06a" BrowseName="1:BatteryLevel" ParentNodeId="ns=1;g=4b71311a-b760-4d6f-8095-a1e6d867f432" DataType="Float">
+    <DisplayName>BatteryLevel</DisplayName>
+    <Description>Current Battery level</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">AnalogItemType</Reference>
+      <Reference ReferenceType="HasModellingRule">Optional</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;g=4b71311a-b760-4d6f-8095-a1e6d867f432</Reference>
+    </References>
+  </UAVariable>
+  <UAObjectType NodeId="ns=1;g=c87dbe81-6e73-4300-81b8-ccea607c9e9c" BrowseName="1:NCDWirelessLightSensorType">
+    <DisplayName>NCDWirelessLightSensorType</DisplayName>
+    <Description>NCD Wireless Light and Proximity Sensor Type Definitions</Description>
+    <Category>Base Info Base Types</Category>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;g=f62b8378-7063-4db7-874f-3900f979c730</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;g=ded1a75c-4071-470a-b6c3-0c922011e24e</Reference>
+      <Reference ReferenceType="HasSubtype" IsForward="false">ns=1;g=4b71311a-b760-4d6f-8095-a1e6d867f432</Reference>
+    </References>
+  </UAObjectType>
+  <UAVariable NodeId="ns=1;g=d991fc98-3bdc-4cac-b243-7d2e9020ebbd" BrowseName="1:Temperature" ParentNodeId="ns=1;g=b9c58300-5799-48a5-b29b-564fce80d94a" DataType="Float">
+    <DisplayName>Temperature</DisplayName>
+    <Description>Current detected Temperature measured in Celsius</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">AnalogItemType</Reference>
+      <Reference ReferenceType="HasModellingRule">Optional</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;g=b9c58300-5799-48a5-b29b-564fce80d94a</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;g=ded1a75c-4071-470a-b6c3-0c922011e24e" BrowseName="1:Proximity" ParentNodeId="ns=1;g=c87dbe81-6e73-4300-81b8-ccea607c9e9c" DataType="Float">
+    <DisplayName>Proximity</DisplayName>
+    <Description>Current detected Proximity measured in millimeters</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">AnalogItemType</Reference>
+      <Reference ReferenceType="HasModellingRule">Optional</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;g=c87dbe81-6e73-4300-81b8-ccea607c9e9c</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;g=f62b8378-7063-4db7-874f-3900f979c730" BrowseName="1:Lux" ParentNodeId="ns=1;g=c87dbe81-6e73-4300-81b8-ccea607c9e9c" DataType="Float">
+    <DisplayName>Lux</DisplayName>
+    <Description>Current detected Brightness measured in Lux</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">AnalogItemType</Reference>
+      <Reference ReferenceType="HasModellingRule">Optional</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;g=c87dbe81-6e73-4300-81b8-ccea607c9e9c</Reference>
+    </References>
+  </UAVariable>
+</UANodeSet>
