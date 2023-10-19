@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <UANodeSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" LastModified="2023-10-19T12:31:11.9560248Z" xmlns="http://opcfoundation.org/UA/2011/03/UANodeSet.xsd">
   <NamespaceUris>
-    <Uri>https://www.axiomsystems.io/profiles/ncdwireless</Uri>
+    <Uri>https://axiomsystems.io/profiles/ncdwireless</Uri>
   </NamespaceUris>
   <Models>
-    <Model ModelUri="https://www.axiomsystems.io/profiles/ncdwireless" Version="1.0.0" PublicationDate="2023-10-19T00:00:00Z">
+    <Model ModelUri="https://axiomsystems.io/profiles/ncdwireless" Version="1.0.0" PublicationDate="2023-10-19T00:00:00Z">
       <RequiredModel ModelUri="http://opcfoundation.org/UA/" Version="1.05.02" PublicationDate="2022-11-01T00:00:00Z" />
     </Model>
   </Models>
